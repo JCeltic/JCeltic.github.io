@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html 
+    lang="zh-cn"
+    class="no-js"
+>
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="generation-date" content="2020-09-26 08:59:28.9293815 &#43;0800 CST m=&#43;0.118879501">
+    <title>MyBatis知识1 &middot; JCeltic的学习之旅</title>
+    <link rel="shortcut icon" href="https://jceltic.github.io/img/favicon.ico">
+    <link rel="icon" href="https://jceltic.github.io/img/favicon.ico">
+    
+<link rel="stylesheet" href="https://jceltic.github.io/css/materialize.min.css">
+
+
+<link rel="stylesheet" href="https://jceltic.github.io/css/font-awesome.min.css">
+
+
+    
+    <link rel="stylesheet" href="https://jceltic.github.io/css/styles/railscasts.css">
+
+
+
+<link rel="stylesheet" href="https://jceltic.github.io/css/lightbox.css">
+
+
+<link rel="stylesheet" href="https://jceltic.github.io/css/main.css">
+
+
+    <script src="https://jceltic.github.io/js/modernizr-latest.js"></script>
+    <script src="https://jceltic.github.io/js/lazysizes.min.js"></script>
+    <script src="https://jceltic.github.io/js/ls.noscript.min.js"></script>
+
+    <script>
+        window.lazySizesConfig = window.lazySizesConfig || {};
+        lazySizesConfig.addClasses = true;
+        lazySizesConfig.loadMode = 2;
+    </script>
+
+    
+</head>
+
+
+
+<body class="page-colors minimum-viewport-height">
+    
+
+<nav class="main-menu menu-colors">
+    <ul class="menu menu-colors no-list-float">
+        <li><a href="https://jceltic.github.io/"><i class="fa fa-home fa-2x"></i></a></li>
+        <li>
+            <a href="#!"><i class="fa fa-bars fa-2x"></i></a>
+
+            
+            <ul class="menu flexible-width menu-colors no-list-float">
+                
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//customgallery/">
+                            
+                            <span>Customgalleries</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//custompost/">
+                            
+                            <span>Customposts</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//customproject/">
+                            
+                            <span>Customprojects</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//gallery/">
+                            
+                            <span>Galleries</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li class="active">
+                    
+                        <a href="https://jceltic.github.io//post/">
+                            
+                            <span>Posts</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//project/">
+                            
+                            <span>Projects</span>
+                        </a>
+                    
+                    </li>
+                
+            </ul>
+        </li>
+        <li><a href="#!" data-lightbox-id="searchbox"><i class="fa fa-search fa-2x"></i></a></li>
+        
+            <li class="blue-grey-text" style="border-top: 1px solid;"></li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-wechat fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-qq fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="blue-grey-text" style="border-top: 1px solid;"></li>
+        <li>
+            <a href="" type="application/rss+xml" target="_blank">
+                <i class="fa fa-rss fa-2x"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div id="searchbox" class="no-display">
+    <div class="valign-wrapper fill-container">
+        <div class="valign large-form horizontal-center-hack">
+            <form method="get" id="search" action="http://duckduckgo.com/">
+    <input type="hidden" name="sites"value="https://jceltic.github.io/"/>
+    <input type="hidden" name="ka" value="h"/>
+    <input type="hidden" name="k7" value="#fafafa"/>
+    <input type="hidden" name="kj" value="#3f3f3f"/>
+    <input type="hidden" name="ky" value="#fafafa"/>
+    <input type="hidden" name="kx" value="b"/>
+    <input type="hidden" name="kt" value="Helvetica"/>
+    <input type="text" name="q" maxlength="255" placeholder="Search"/>
+    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+</form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <div class="main-content">
+        <div class="center-space">
+            <div class="article-colors">
+                
+                <article>
+                    <header>
+                        <h1 class="article-title">MyBatis知识1</h1>
+                        <time class="date-color">Fri Sep 25, 2020</time>
+                        <span class="separator">|</span>
+                        
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/categories//post">/post</a></li>
+    
+</ul>
+
+
+                        <span class="separator">|</span>
+                        
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/tags/java">java</a></li>
+    
+        <li><a href="https://jceltic.github.io/tags/mybatis">mybatis</a></li>
+    
+</ul>
+
+
+                    </header>
+
+                    <hr>
+
+                    <section>
+                        
+                            <h3 id="1mybatis">1.Mybatis</h3>
+<h4 id="11-什么是mybatis">1.1 什么是Mybatis</h4>
+<p>mybatis 是一个优秀的基于java的持久层框架，它内部封装了jdbc，使开发者只需要关注sql语句本身，而不需要花费精力去处理加载驱动、创建连接、创建statement等繁杂的过程。</p>
+<p>mybatis通过xml或注解的方式将要执行的各种 statement配置起来，并通过java对象和statement中sql的动态参数进行映射生成最终执行的sql语句。</p>
+<p>最后mybatis框架执行sql并将结果映射为java对象并返回。采用ORM思想解决了实体和数据库映射的问题，对jdbc 进行了封装，屏蔽了jdbc api 底层访问细节，使我们不用与jdbc api 打交道，就可以完成对数据库的持久化操作。</p>
+<h3 id="2mybatis的快速入门">2.Mybatis的快速入门</h3>
+<h4 id="21-mybatis开发步骤">2.1 MyBatis开发步骤</h4>
+<p>MyBatis官网地址：<a href="http://www.mybatis.org/mybatis-3/">http://www.mybatis.org/mybatis-3/</a></p>
+<p><strong>MyBatis开发步骤：</strong></p>
+<blockquote>
+<p>①添加MyBatis的坐标</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#75715e">&lt;!--mybatis坐标--&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.mybatis<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>mybatis<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>3.4.5<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#75715e">&lt;!--mysql驱动坐标--&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>    
+        <span style="color:#f92672">&lt;groupId&gt;</span>mysql<span style="color:#f92672">&lt;/groupId&gt;</span>   
+        <span style="color:#f92672">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#f92672">&lt;/artifactId&gt;</span>    
+        <span style="color:#f92672">&lt;version&gt;</span>5.1.6<span style="color:#f92672">&lt;/version&gt;</span>    
+        <span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#75715e">&lt;!--单元测试坐标--&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>    
+        <span style="color:#f92672">&lt;groupId&gt;</span>junit<span style="color:#f92672">&lt;/groupId&gt;</span>    
+        <span style="color:#f92672">&lt;artifactId&gt;</span>junit<span style="color:#f92672">&lt;/artifactId&gt;</span>    
+        <span style="color:#f92672">&lt;version&gt;</span>4.12<span style="color:#f92672">&lt;/version&gt;</span>    
+        <span style="color:#f92672">&lt;scope&gt;</span>test<span style="color:#f92672">&lt;/scope&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+    <span style="color:#75715e">&lt;!--日志坐标--&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>    
+        <span style="color:#f92672">&lt;groupId&gt;</span>log4j<span style="color:#f92672">&lt;/groupId&gt;</span>    
+        <span style="color:#f92672">&lt;artifactId&gt;</span>log4j<span style="color:#f92672">&lt;/artifactId&gt;</span>    
+        <span style="color:#f92672">&lt;version&gt;</span>1.2.12<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><p>②创建user数据表</p>
+<blockquote>
+<p>③编写User实体类</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> <span style="color:#f92672">{</span>    
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">;</span>    
+        <span style="color:#66d9ef">private</span> String username<span style="color:#f92672">;</span>    
+        <span style="color:#66d9ef">private</span> String password<span style="color:#f92672">;</span>
+        <span style="color:#75715e">//省略get个set方法
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</code></pre></div><blockquote>
+<p>④编写映射文件UserMapper.xml</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;</span>
+    <span style="color:#75715e">&lt;!DOCTYPE mapper        
+</span><span style="color:#75715e">        PUBLIC &#34;-//mybatis.org//DTD Mapper 3.0//EN&#34;        
+</span><span style="color:#75715e">        &#34;http://mybatis.org/dtd/mybatis-3-mapper.dtd&#34;&gt;</span>
+    <span style="color:#f92672">&lt;mapper</span> <span style="color:#a6e22e">namespace=</span><span style="color:#e6db74">&#34;userMapper&#34;</span><span style="color:#f92672">&gt;</span>    
+        <span style="color:#f92672">&lt;select</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;findAll&#34;</span> <span style="color:#a6e22e">resultType=</span><span style="color:#e6db74">&#34;com.itheima.domain.User&#34;</span><span style="color:#f92672">&gt;</span>        
+            select * from User    
+        <span style="color:#f92672">&lt;/select&gt;</span>
+    <span style="color:#f92672">&lt;/mapper&gt;</span>
+</code></pre></div><p>⑤编写核心文件SqlMapConfig.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#75715e">&lt;!DOCTYPE configuration PUBLIC &#34;-//mybatis.org//DTD Config 3.0//EN“ &#34;http://mybatis.org/dtd/mybatis-3-config.dtd&#34;&gt;</span>
+    <span style="color:#f92672">&lt;configuration&gt;</span>    
+        <span style="color:#f92672">&lt;environments</span> <span style="color:#a6e22e">default=</span><span style="color:#e6db74">&#34;development&#34;</span><span style="color:#f92672">&gt;</span>        
+            <span style="color:#f92672">&lt;environment</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;development&#34;</span><span style="color:#f92672">&gt;</span>            
+                <span style="color:#f92672">&lt;transactionManager</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;JDBC&#34;</span><span style="color:#f92672">/&gt;</span>            
+                <span style="color:#f92672">&lt;dataSource</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;POOLED&#34;</span><span style="color:#f92672">&gt;</span>                
+                    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;driver&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span><span style="color:#f92672">/&gt;</span>
+                    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;url&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;jdbc:mysql:///test&#34;</span><span style="color:#f92672">/&gt;</span>                
+                    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">/&gt;</span>
+                    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">/&gt;</span>            
+                <span style="color:#f92672">&lt;/dataSource&gt;</span>        
+            <span style="color:#f92672">&lt;/environment&gt;</span>    
+        <span style="color:#f92672">&lt;/environments&gt;</span>    
+        
+        <span style="color:#f92672">&lt;mappers&gt;</span> 
+            <span style="color:#f92672">&lt;mapper</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;com/itheima/mapper/UserMapper.xml&#34;</span><span style="color:#f92672">/&gt;</span> 
+        <span style="color:#f92672">&lt;/mappers&gt;</span>
+    <span style="color:#f92672">&lt;/configuration&gt;</span>
+
+</code></pre></div><blockquote>
+<p>⑥编写测试类</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#75715e">//加载核心配置文件
+</span><span style="color:#75715e"></span>    InputStream resourceAsStream <span style="color:#f92672">=</span> Resources<span style="color:#f92672">.</span><span style="color:#a6e22e">getResourceAsStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SqlMapConfig.xml&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#75715e">//获得sqlSession工厂对象
+</span><span style="color:#75715e"></span>    SqlSessionFactory sqlSessionFactory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span>            
+                            SqlSessionFactoryBuilder<span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">(</span>resourceAsStream<span style="color:#f92672">);</span>
+    <span style="color:#75715e">//获得sqlSession对象
+</span><span style="color:#75715e"></span>    SqlSession sqlSession <span style="color:#f92672">=</span> sqlSessionFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">openSession</span><span style="color:#f92672">();</span>
+    <span style="color:#75715e">//执行sql语句
+</span><span style="color:#75715e"></span>    List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> userList <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">selectList</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userMapper.findAll&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#75715e">//打印结果
+</span><span style="color:#75715e"></span>    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>userList<span style="color:#f92672">);</span>
+    <span style="color:#75715e">//释放资源
+</span><span style="color:#75715e"></span>    sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</code></pre></div><h4 id="24-知识小结">2.4 知识小结</h4>
+<p><strong>MyBatis开发步骤：</strong></p>
+<p>①添加MyBatis的坐标</p>
+<p>②创建user数据表</p>
+<p>③编写User实体类</p>
+<p>④编写映射文件UserMapper.xml</p>
+<p>⑤编写核心文件SqlMapConfig.xml</p>
+<p>⑥编写测试类</p>
+<h3 id="3-mybatis的插入数据操作">3 MyBatis的插入数据操作</h3>
+<h4 id="31-mybatis的插入数据操作">3.1 MyBatis的插入数据操作</h4>
+<p><strong>1)编写UserMapper映射文件</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#f92672">&lt;mapper</span> <span style="color:#a6e22e">namespace=</span><span style="color:#e6db74">&#34;userMapper&#34;</span><span style="color:#f92672">&gt;</span>    
+        <span style="color:#f92672">&lt;insert</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;add&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;com.itheima.domain.User&#34;</span><span style="color:#f92672">&gt;</span>        
+            insert into user values(#{id},#{username},#{password})    
+        <span style="color:#f92672">&lt;/insert&gt;</span>
+    <span style="color:#f92672">&lt;/mapper&gt;</span>
+</code></pre></div><p><strong>2)编写插入实体User的代码</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    InputStream resourceAsStream <span style="color:#f92672">=</span> Resources<span style="color:#f92672">.</span><span style="color:#a6e22e">getResourceAsStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SqlMapConfig.xml&#34;</span><span style="color:#f92672">);</span>
+    SqlSessionFactory sqlSessionFactory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> 
+                            SqlSessionFactoryBuilder<span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">(</span>resourceAsStream<span style="color:#f92672">);</span>
+    SqlSession sqlSession <span style="color:#f92672">=</span> sqlSessionFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">openSession</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">int</span> insert <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">insert</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userMapper.add&#34;</span><span style="color:#f92672">,</span> user<span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>insert<span style="color:#f92672">);</span>
+    <span style="color:#75715e">//提交事务
+</span><span style="color:#75715e"></span>    sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">commit</span><span style="color:#f92672">();</span>
+    sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</code></pre></div><p><strong>3)插入操作注意问题</strong></p>
+<p>• 插入语句使用insert标签</p>
+<p>• 在映射文件中使用parameterType属性指定要插入的数据类型</p>
+<p>•Sql语句中使用#{实体属性名}方式引用实体中的属性值</p>
+<p>•插入操作使用的API是sqlSession.insert(“命名空间.id”,实体对象);</p>
+<p>•插入操作涉及数据库数据变化，所以要使用sqlSession对象显示的提交事务，即sqlSession.commit()</p>
+<h4 id="32-mybatis的修改数据操作">3.2 MyBatis的修改数据操作</h4>
+<p><strong>1)编写UserMapper映射文件</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#f92672">&lt;mapper</span> <span style="color:#a6e22e">namespace=</span><span style="color:#e6db74">&#34;userMapper&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;update</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;update&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;com.itheima.domain.User&#34;</span><span style="color:#f92672">&gt;</span>
+            update user set username=#{username},password=#{password} where id=#{id}
+        <span style="color:#f92672">&lt;/update&gt;</span>
+    <span style="color:#f92672">&lt;/mapper&gt;</span>
+</code></pre></div><p><strong>2)编写修改实体User的代码</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    InputStream resourceAsStream <span style="color:#f92672">=</span> Resources<span style="color:#f92672">.</span><span style="color:#a6e22e">getResourceAsStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SqlMapConfig.xml&#34;</span><span style="color:#f92672">);</span>
+    SqlSessionFactory sqlSessionFactory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SqlSessionFactoryBuilder<span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">(</span>resourceAsStream<span style="color:#f92672">);</span>
+    SqlSession sqlSession <span style="color:#f92672">=</span> sqlSessionFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">openSession</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">int</span> update <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userMapper.update&#34;</span><span style="color:#f92672">,</span> user<span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>update<span style="color:#f92672">);</span>
+    sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">commit</span><span style="color:#f92672">();</span>
+    sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</code></pre></div><p><strong>3)修改操作注意问题</strong></p>
+<p>• 修改语句使用update标签</p>
+<p>• 修改操作使用的API是sqlSession.update(“命名空间.id”,实体对象);</p>
+<h4 id="43-mybatis的删除数据操作">4.3 MyBatis的删除数据操作</h4>
+<p><strong>1)编写UserMapper映射文件</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#f92672">&lt;mapper</span> <span style="color:#a6e22e">namespace=</span><span style="color:#e6db74">&#34;userMapper&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;delete</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;delete&#34;</span> <span style="color:#a6e22e">parameterType=</span><span style="color:#e6db74">&#34;java.lang.Integer&#34;</span><span style="color:#f92672">&gt;</span>
+            delete from user where id=#{id}
+        <span style="color:#f92672">&lt;/delete&gt;</span>
+    <span style="color:#f92672">&lt;/mapper&gt;</span>
+
+</code></pre></div><p><strong>2)编写删除数据的代码</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    InputStream resourceAsStream <span style="color:#f92672">=</span> Resources<span style="color:#f92672">.</span><span style="color:#a6e22e">getResourceAsStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;SqlMapConfig.xml&#34;</span><span style="color:#f92672">);</span>
+    SqlSessionFactory sqlSessionFactory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SqlSessionFactoryBuilder<span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">(</span>resourceAsStream<span style="color:#f92672">);</span>
+    SqlSession sqlSession <span style="color:#f92672">=</span> sqlSessionFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">openSession</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">int</span> delete <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userMapper.delete&#34;</span><span style="color:#f92672">,</span>3<span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>delete<span style="color:#f92672">);</span>
+    sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">commit</span><span style="color:#f92672">();</span>
+    sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</code></pre></div><p><strong>3)删除操作注意问题</strong></p>
+<p>• 删除语句使用delete标签</p>
+<p>•Sql语句中使用#{任意字符串}方式引用传递的单个参数</p>
+<p>•删除操作使用的API是sqlSession.delete(“命名空间.id”,Object);</p>
+<h4 id="34-知识小结">3.4 知识小结</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    增删改查映射配置与API<span style="color:#960050;background-color:#1e0010">：</span>
+    查询数据<span style="color:#960050;background-color:#1e0010">：</span> List<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> userList <span style="color:#f92672">=</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">selectList</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userMapper.findAll&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">&lt;</span>select id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;findAll&#34;</span> resultType<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;com.itheima.domain.User&#34;</span><span style="color:#f92672">&gt;</span>
+            select <span style="color:#f92672">*</span> from User
+        <span style="color:#f92672">&lt;/</span>select<span style="color:#f92672">&gt;</span>
+    添加数据<span style="color:#960050;background-color:#1e0010">：</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">insert</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userMapper.add&#34;</span><span style="color:#f92672">,</span> user<span style="color:#f92672">);</span>
+        <span style="color:#f92672">&lt;</span>insert id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;add&#34;</span> parameterType<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;com.itheima.domain.User&#34;</span><span style="color:#f92672">&gt;</span>
+            insert into user <span style="color:#a6e22e">values</span><span style="color:#f92672">(</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#f92672">{</span>id<span style="color:#f92672">},</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#f92672">{</span>username<span style="color:#f92672">},</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#f92672">{</span>password<span style="color:#f92672">})</span>
+        <span style="color:#f92672">&lt;/</span>insert<span style="color:#f92672">&gt;</span>
+    修改数据<span style="color:#960050;background-color:#1e0010">：</span> sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">update</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userMapper.update&#34;</span><span style="color:#f92672">,</span> user<span style="color:#f92672">);</span>
+        <span style="color:#f92672">&lt;</span>update id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;update&#34;</span> parameterType<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;com.itheima.domain.User&#34;</span><span style="color:#f92672">&gt;</span>
+            update user set username<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#f92672">{</span>username<span style="color:#f92672">},</span>password<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#f92672">{</span>password<span style="color:#f92672">}</span> where id<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#f92672">{</span>id<span style="color:#f92672">}</span>
+        <span style="color:#f92672">&lt;/</span>update<span style="color:#f92672">&gt;</span>
+    删除数据<span style="color:#960050;background-color:#1e0010">：</span>sqlSession<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userMapper.delete&#34;</span><span style="color:#f92672">,</span>3<span style="color:#f92672">);</span>
+        <span style="color:#f92672">&lt;</span>delete id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;delete&#34;</span> parameterType<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;java.lang.Integer&#34;</span><span style="color:#f92672">&gt;</span>
+            delete from user where id<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#f92672">{</span>id<span style="color:#f92672">}</span>
+        <span style="color:#f92672">&lt;/</span>delete<span style="color:#f92672">&gt;</span>
+</code></pre></div>
+                        
+                    </section>
+
+                    <footer class="right-align">
+                        <p><small>Copyright © JCeltic</small></p>
+                    </footer>
+
+                    
+
+
+                </article>
+            </div>
+        </div>
+    </div>
+
+    
+<script src="https://jceltic.github.io/js/jquery-2.1.4.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/materialize.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/imagesloaded.pkgd.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/masonry.pkgd.min.js"></script>
+
+
+    
+    <script src="https://jceltic.github.io/js/highlight.pack.js"></script>
+
+
+
+<script src="https://jceltic.github.io/js/lightbox.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/jquery.infinitescroll.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/main.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html 
+    lang="zh-cn"
+    class="no-js"
+>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    
+      <link href="https://jceltic.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="JCeltic的学习之旅" />
+      <link href="https://jceltic.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="JCeltic的学习之旅" />
+    
+    <meta name="generator" content="Hugo 0.75.1" />
+    <meta name="generation-date" content="2020-09-26 08:59:28.9403519 &#43;0800 CST m=&#43;0.129849901">
+    <title>Posts &middot; JCeltic的学习之旅</title>
+    <link rel="shortcut icon" href="https://jceltic.github.io/img/favicon.ico">
+    <link rel="icon" href="https://jceltic.github.io/img/favicon.ico">
+    
+<link rel="stylesheet" href="https://jceltic.github.io/css/materialize.min.css">
+
+
+<link rel="stylesheet" href="https://jceltic.github.io/css/font-awesome.min.css">
+
+
+    
+    <link rel="stylesheet" href="https://jceltic.github.io/css/styles/railscasts.css">
+
+
+
+<link rel="stylesheet" href="https://jceltic.github.io/css/lightbox.css">
+
+
+<link rel="stylesheet" href="https://jceltic.github.io/css/main.css">
+
+
+    <script src="https://jceltic.github.io/js/modernizr-latest.js"></script>
+    <script src="https://jceltic.github.io/js/lazysizes.min.js"></script>
+    <script src="https://jceltic.github.io/js/ls.noscript.min.js"></script>
+
+    <script>
+        window.lazySizesConfig = window.lazySizesConfig || {};
+        lazySizesConfig.addClasses = true;
+        lazySizesConfig.loadMode = 2;
+    </script>
+
+    
+</head>
+
+
+
+<body>
+    
+
+<nav class="main-menu menu-colors">
+    <ul class="menu menu-colors no-list-float">
+        <li><a href="https://jceltic.github.io/"><i class="fa fa-home fa-2x"></i></a></li>
+        <li>
+            <a href="#!"><i class="fa fa-bars fa-2x"></i></a>
+
+            
+            <ul class="menu flexible-width menu-colors no-list-float">
+                
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//customgallery/">
+                            
+                            <span>Customgalleries</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//custompost/">
+                            
+                            <span>Customposts</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//customproject/">
+                            
+                            <span>Customprojects</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//gallery/">
+                            
+                            <span>Galleries</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li class="active">
+                    
+                        <a href="https://jceltic.github.io//post/">
+                            
+                            <span>Posts</span>
+                        </a>
+                    
+                    </li>
+                
+                    <li >
+                    
+                        <a href="https://jceltic.github.io//project/">
+                            
+                            <span>Projects</span>
+                        </a>
+                    
+                    </li>
+                
+            </ul>
+        </li>
+        <li><a href="#!" data-lightbox-id="searchbox"><i class="fa fa-search fa-2x"></i></a></li>
+        
+            <li class="blue-grey-text" style="border-top: 1px solid;"></li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-wechat fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-qq fa-2x"></i>
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="#!">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="blue-grey-text" style="border-top: 1px solid;"></li>
+        <li>
+            <a href="https://jceltic.github.io/post/index.xml" type="application/rss+xml" target="_blank">
+                <i class="fa fa-rss fa-2x"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div id="searchbox" class="no-display">
+    <div class="valign-wrapper fill-container">
+        <div class="valign large-form horizontal-center-hack">
+            <form method="get" id="search" action="http://duckduckgo.com/">
+    <input type="hidden" name="sites"value="https://jceltic.github.io/"/>
+    <input type="hidden" name="ka" value="h"/>
+    <input type="hidden" name="k7" value="#fafafa"/>
+    <input type="hidden" name="kj" value="#3f3f3f"/>
+    <input type="hidden" name="ky" value="#fafafa"/>
+    <input type="hidden" name="kx" value="b"/>
+    <input type="hidden" name="kt" value="Helvetica"/>
+    <input type="text" name="q" maxlength="255" placeholder="Search"/>
+    <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
+</form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    
+    
+        
+    
+
+    
+        
+            
+        
+    
+
+    
+
+    <section class="main-content">
+        <div class="masonry-flex-container infinite-scroll">
+            
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Fri Sep 25, 2020</time>
+            
+            <h2 class="page-item-title">MyBatis知识1</h2>
+        </header>
+        <p class="page-item-summary">1.Mybatis 1.1 什么是Mybatis mybatis 是一个优秀的基于java的持久层框架，它内部封装了jdbc，使开发者只需要关注sql语句本身，而不需要花费精力去处理加载驱动、创建连接、创建statement等繁杂的过程。
+mybatis通过xml或注解的方式将要执行的各种 statement配置起来，并通过java对象和statement中sql的动态参数进行映射生成最终执行的sql语句。
+最后mybatis框架执行sql并将结果映射为java对象并返回。采用ORM思想解决了实体和数据库映射的问题，对jdbc 进行了封装，屏蔽了jdbc api 底层访问细节，使我们不用与jdbc api 打交道，就可以完成对数据库的持久化操作。
+2.Mybatis的快速入门 2.1 MyBatis开发步骤 MyBatis官网地址：http://www.mybatis.org/mybatis-3/
+MyBatis开发步骤：
+ ①添加MyBatis的坐标
+ &lt;!--mybatis坐标--&gt; &lt;dependency&gt; &lt;groupId&gt;org.mybatis&lt;/groupId&gt; &lt;artifactId&gt;mybatis&lt;/artifactId&gt; &lt;version&gt;3.4.5&lt;/version&gt; &lt;/dependency&gt; &lt;!--mysql驱动坐标--&gt; &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;5.1.6&lt;/version&gt; &lt;scope&gt;runtime&lt;/scope&gt; &lt;/dependency&gt; &lt;!--单元测试坐标--&gt; &lt;dependency&gt; &lt;groupId&gt;junit&lt;/groupId&gt; &lt;artifactId&gt;junit&lt;/artifactId&gt; &lt;version&gt;4.12&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;!--日志坐标--&gt; &lt;dependency&gt; &lt;groupId&gt;log4j&lt;/groupId&gt; &lt;artifactId&gt;log4j&lt;/artifactId&gt; &lt;version&gt;1.2.12&lt;/version&gt; &lt;/dependency&gt; ②创建user数据表
+ ③编写User实体类
+ public class User { private int id; private String username; private String password; //省略get个set方法  }  ④编写映射文件UserMapper.xml
+ &lt;?</p>
+        <a href="https://jceltic.github.io/post/one/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/categories//post">/post</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/tags/java">java</a></li>
+    
+        <li><a href="https://jceltic.github.io/tags/mybatis">mybatis</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+
+                    </div>
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Fri Sep 25, 2020</time>
+            
+            <h2 class="page-item-title">MyBatis知识2</h2>
+        </header>
+        <p class="page-item-summary"></p>
+        <a href="https://jceltic.github.io/post/two/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/categories//post">/post</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/tags/java">java</a></li>
+    
+        <li><a href="https://jceltic.github.io/tags/mybatis">mybatis</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+
+                    </div>
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+        <img src="https://jceltic.github.io//img/bear.jpg" class="page-item-image"></img>
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Fri Sep 25, 2020</time>
+            
+            <h2 class="page-item-title">MyBatis知识点</h2>
+        </header>
+        <p class="page-item-summary"></p>
+        <a href="https://jceltic.github.io/post/info/" class="page-item-btn ">
+            Read More
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/categories/category1">category1</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/tags/tag1">tag1</a></li>
+    
+        <li><a href="https://jceltic.github.io/tags/tag2">tag2</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+
+                    </div>
+                
+                    <div class="flex-item">
+                        
+<div class="page-item-container">
+    
+    <div class="page-item-content">
+        <header>
+            
+                <time class="page-item-date">Fri Sep 25, 2020</time>
+            
+            <h2 class="page-item-title">Redirect</h2>
+        </header>
+        <p class="page-item-summary"></p>
+        <a href="https://jceltic.github.io/post/redirect/" class="page-item-btn page-item-btn-red">
+            Redirect
+        </a>
+        <footer>
+            
+<ul class="categories">
+    <li>
+        <i class="fa fa-book"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/categories/category1">category1</a></li>
+    
+</ul>
+
+
+            <span class="separator">|</span>
+            
+<ul class="tags">
+    <li>
+        <i class="fa fa-tags"></i>
+    </li>
+    
+        <li><a href="https://jceltic.github.io/tags/redirect">redirect</a></li>
+    
+        <li><a href="https://jceltic.github.io/tags//">/</a></li>
+    
+</ul>
+
+
+        </footer>
+    </div>
+</div>
+
+
+                    </div>
+                
+            
+        </div>
+        
+
+    <ul class="pagination">
+        
+            <li class="disabled">
+                <a href="#!">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            </li>
+            
+            
+                <li class="active">
+                    <a href="https://jceltic.github.io//post/">1</a>
+                </li>
+            
+            <li class="disabled">
+                <a href="#!">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        
+    </ul>
+
+
+
+    </section>
+
+    
+<script src="https://jceltic.github.io/js/jquery-2.1.4.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/materialize.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/imagesloaded.pkgd.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/masonry.pkgd.min.js"></script>
+
+
+    
+    <script src="https://jceltic.github.io/js/highlight.pack.js"></script>
+
+
+
+<script src="https://jceltic.github.io/js/lightbox.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/jquery.infinitescroll.min.js"></script>
+
+
+<script src="https://jceltic.github.io/js/main.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+
+

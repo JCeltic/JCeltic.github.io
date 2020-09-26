@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tag4 on JCeltic的学习之旅</title>
+    <link>https://jceltic.github.io/tags/tag4/</link>
+    <description>Recent content in tag4 on JCeltic的学习之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright &amp;#169; JCeltic</copyright>
+    <lastBuildDate>Sat, 25 Jul 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://jceltic.github.io/tags/tag4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>One</title>
+      <link>https://jceltic.github.io/custompost/two/</link>
+      <pubDate>Sat, 25 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://jceltic.github.io/custompost/two/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate vehicula mi id fringilla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin rutrum vestibulum quam vitae ultrices. Suspendisse dui tortor, suscipit id augue et, placerat placerat ipsum. Nam vulputate ex eget varius convallis. Nullam mollis egestas ex eget faucibus. Maecenas ut est a diam ullamcorper aliquet at vel ante.</description>
+    </item>
+    
+  </channel>
+</rss>

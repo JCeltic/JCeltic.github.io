@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mybatis on JCeltic的学习之旅</title>
+    <link>https://jceltic.github.io/tags/mybatis/</link>
+    <description>Recent content in mybatis on JCeltic的学习之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright &amp;#169; JCeltic</copyright>
+    <lastBuildDate>Fri, 25 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://jceltic.github.io/tags/mybatis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MyBatis知识1</title>
+      <link>https://jceltic.github.io/post/one/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jceltic.github.io/post/one/</guid>
+      <description>1.Mybatis 1.1 什么是Mybatis mybatis 是一个优秀的基于java的持久层框架，它内部封装了jdbc，使开发者只需要关注sql语句本身，而不需要花费精力去处理加载驱动、创建连接、创建statement等繁杂的过程。
+mybatis通过xml或注解的方式将要执行的各种 statement配置起来，并通过java对象和statement中sql的动态参数进行映射生成最终执行的sql语句。
+最后mybatis框架执行sql并将结果映射为java对象并返回。采用ORM思想解决了实体和数据库映射的问题，对jdbc 进行了封装，屏蔽了jdbc api 底层访问细节，使我们不用与jdbc api 打交道，就可以完成对数据库的持久化操作。
+2.Mybatis的快速入门 2.1 MyBatis开发步骤 MyBatis官网地址：http://www.mybatis.org/mybatis-3/
+MyBatis开发步骤：
+ ①添加MyBatis的坐标
+ &amp;lt;!--mybatis坐标--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.4.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!--mysql驱动坐标--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.1.6&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!--单元测试坐标--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.12&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!--日志坐标--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.12&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; ②创建user数据表
+ ③编写User实体类
+ public class User { private int id; private String username; private String password; //省略get个set方法  }  ④编写映射文件UserMapper.xml
+ &amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>MyBatis知识2</title>
+      <link>https://jceltic.github.io/post/two/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jceltic.github.io/post/two/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
